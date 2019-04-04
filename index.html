@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Data Layer: Simple</title>
+  <meta name="viewport" content="initial-scale=1.0">
+  <meta charset="utf-8">
+  <style>
+    /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+    #map {
+      height: 525px;
+      width: 800px;
+    }
+
+    /* Optional: Makes the sample page fill the window. */
+    html,
+    body {
+      height: 100%;
+      margin-left: 1em;
+      margin-top: 2.5em;
+      padding: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="map"></div>
+  <script>
+
+    var map;
+    function initMap() {
+      map = new google.maps.Map(document.getElementById('map'), {
+
+        center: { lat: 37.871, lng: -122.272747 },
+        zoom: 12
+
+
+      });
+
+      map.data.loadGeoJson('https://gist.githubusercontent.com/JessieSidWho/390d018648b7c4a7cbe88deb813db0a7/raw/45879ff7bf33b9364e0cb8bfe3cddea7e53091e5/sfbay.geojson');
+
+      // map.data.setStyle({
+      //   fillColor: '#2687bf',
+      //   fillOpacity: .3,
+      //   strokeWeight: 0
+      // })
+
+    }
+
+
+  </script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=<API-KEY>&callback=initMap">
+  </script>
+</body>
+
+</html>
