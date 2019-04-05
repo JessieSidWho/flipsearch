@@ -1,3 +1,3 @@
 exports.google = {
-    api=process.env.GOOGLE_API_KEY
+    api: process.env.GOOGLE_API_KEY
 };
