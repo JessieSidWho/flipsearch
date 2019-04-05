@@ -1,0 +1,23 @@
+{
+  "name": "flipsearch",
+  "version": "1.0.0",
+  "description": "Flip Search",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JessieSidWho/flipsearch.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JessieSidWho/flipsearch/issues"
+  },
+  "homepage": "https://github.com/JessieSidWho/flipsearch#readme",
+  "dependencies": {
+    "dotenv": "^7.0.0"
+  }
+}
