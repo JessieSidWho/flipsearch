@@ -1,0 +1,34 @@
+<section>
+    <h1>Flip Search</h1>
+</section>
+
+<section>
+    <label>user name</label>
+</section>
+<section>
+    <input type="text" id="username">
+</section>
+
+<section>
+    <label>password</label>
+</section>
+<section>
+    <input type="text" id="password">
+</section>
+
+<section>
+    <button id="login">Login</button>
+</section>
+
+<script>
+    $(`#login`).on(`click`, event => {
+        event.preventDefault();
+
+        const username = $(`#username`).val().trim();
+        const password = $(`#password`).val().trim();
+
+        console.log(username, password);
+
+        //$.ajax()
+    })
+</script>

@@ -50,6 +50,23 @@ var orm = {
       cb(result);
     });
   },
+  one: function(table, username, password, cb) {
+    const queryString = `SELECT * FROM ? WHERE ? AND ?`
+    connection.query(queryString,
+      {
+        table
+      },
+      {
+        username
+      },
+      {
+        password
+      },
+      function(err, result) {
+        if (err) throw err;
+        cb(result);
+      });
+  },
   create: function(table, cols, vals, cb) {
     var queryString = "INSERT INTO " + table;
 
