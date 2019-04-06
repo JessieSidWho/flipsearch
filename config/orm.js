@@ -51,18 +51,10 @@ var orm = {
     });
   },
   one: function(table, username, password, cb) {
-    const queryString = `SELECT * FROM ? WHERE ? AND ?`
-    connection.query(queryString,
-      {
-        table
-      },
-      {
-        username
-      },
-      {
-        password
-      },
-      function(err, result) {
+    const queryString = "SELECT * FROM ? WHERE ? AND ?"
+    connection.query( queryString,
+      [ { table }, { username }, { password } ],
+      (err, result) => {
         if (err) throw err;
         cb(result);
       });
