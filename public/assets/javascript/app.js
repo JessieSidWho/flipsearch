@@ -49,10 +49,6 @@ function geocodeLatLng(geocoder, input) {
           })
         }).then(result => {
 
-          console.log(result);
-
-          // window.location.href = "/";
-
           const url = `https://www.zillow.com/widgets/search/LargeSearchBoxWidget.htm?did=zillow-large-search-box-iframe-widget&type=iframe&rgname=${result.city}+${result.state}&shvi=yes`
 
           $("#z_widget").attr("src", url);
