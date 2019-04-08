@@ -8,6 +8,8 @@ const keys = require(`../config/keys`);
 let city="Berkeley";
 let state="CA";
 let zip="94703";
+let lat="";
+let lng=";"
 
 router.get(`/`, (req, res) => {
     res.render(`index`, {
