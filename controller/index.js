@@ -29,7 +29,7 @@ router.post(`/`, (req, res) => {
     //     state,
     //     zip
     // });
-    res.end();
+    res.json({city, state, zip});
 });
 
 module.exports = router;

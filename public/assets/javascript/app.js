@@ -36,7 +36,7 @@ function geocodeLatLng(geocoder, input) {
         const state = stateNzip[0];
         const zip = stateNzip[1];
 
-        console.log(city, state, zip);
+        // console.log(city, state, zip);
 
         $.ajax({
           url: "/",
@@ -48,7 +48,14 @@ function geocodeLatLng(geocoder, input) {
             zip
           })
         }).then(result => {
-          window.location.href = "/";
+
+          console.log(result);
+
+          // window.location.href = "/";
+
+          const url = `https://www.zillow.com/widgets/search/LargeSearchBoxWidget.htm?did=zillow-large-search-box-iframe-widget&type=iframe&rgname=${result.city}+${result.state}&shvi=yes`
+
+          $("#z_widget").attr("src", url);
         }); 
 
       } else {
