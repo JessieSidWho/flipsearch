@@ -1,36 +1,302 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    {{!-- <base href="https://www.zillow.com/widgets/LargeSearchBoxWidget.htm" target="_blank"> --}}
+    
     <title>Flip Search</title>
 </head>
-<body>
-  <div class="container-fluid">
-      <div class="row">
-          <div class="col-md-6 offset-3">
-              
-          </div>
-      </div>
 
-      <div class="row">
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6 offset-3">
+
+            </div>
+        </div>
+
+        <div class="row">
 
             <div id="map" class="col-md-6 ml-4"></div>
 
-          
-            <div id="zillow-large-search-box-widget-container" class="col-md-4" style="width:432px;overflow:hidden;background-color:#e7f1fd;color:#555; font: normal normal normal 13px verdana,arial,sans-serif;line-height:13px;margin:0 auto;padding:0;text-align:center;border:1px solid #adcfff;letter-spacing:0;text-transform:none;"><h2 style="color:#d61;text-align:left;font-size:20px;line-height:20px;font-weight:normal;float:left;width:200px;margin-left:10px;margin-top:5px;letter-spacing:0;text-transform:none;">Find Homes</h2><div style="float:right;"><a href="https://www.zillow.com/" target="_blank" rel="nofollow"><img alt="Zillow Real Estate Information" style="border:0;" src="https://www.zillow.com/widgets/GetVersionedResource.htm?path=%2Fstatic%2Fimages%2Fpowered-by-zillow.gif"></img></a></div><iframe scrolling="no" src="https://www.zillow.com/widgets/search/LargeSearchBoxWidget.htm?did=zillow-large-search-box-iframe-widget&type=iframe&rgname=Berkeley+CA&shvi=yes" width="430" frameborder="0" height="400"></iframe><table id="zillow-tnc-widget-footer-links" width="100%" style="font: normal normal normal 10px verdana,arial,sans-serif;text-align:left;line-height:12px;margin:10px 5px;padding:0;border-spacing:0;border-collapse:collapse;"><tbody style="margin:0;padding:0;"><tr style="margin:0;padding:0;"><td style="font-weight:bold;font-size:10px;color:#555;text-align:left;margin:0;padding:0;">QUICK LINKS:</td></tr><tr style="margin:0;padding:0;"><td style="margin:0;padding:0;"><span id="widgetFooterLink" class="regionBasedLink"><a href="https://www.zillow.com/berkeley-ca/" target="_blank" rel="nofollow" style="color:#36b;font-family:verdana,arial,sans-serif;font-size:10px;margin:0 5px 0 0;padding:0;text-decoration:none;"><span class="region">Berkeley</span> Real Estate Listing</a></span></td><td style="margin:0;padding:0;"><span id="widgetFooterLink"><a href="https://www.zillow.com/mortgage-rates/" target="_blank" rel="nofollow" style="color:#36b;font-family:verdana,arial,sans-serif;font-size:10px;margin:0 5px 0 0;padding:0;text-decoration:none;">Mortgage Rates</a></span></td><td style="margin:0;padding:0;"><span id="widgetFooterLink"><a href="https://www.zillow.com/refinance/" target="_blank" rel="nofollow" style="color:#36b;font-family:verdana,arial,sans-serif;font-size:10px;margin:0 5px 0 0;padding:0;text-decoration:none;">Refinancing</a></span></td></tr><tr style="margin:0;padding:0;"><td style="margin:0;padding:0;"><span id="widgetFooterLink" class="regionBasedLink"><a href="https://www.zillow.com/berkeley-ca/foreclosures/" target="_blank" rel="nofollow" style="color:#36b;font-size:10px;margin:0 5px 0 0;padding:0;text-decoration:none;"><span class="region">Berkeley</span> Foreclosures</a></span></td><td style="margin:0;padding:0;"><span id="widgetFooterLink"><a href="https://www.zillow.com/mortgage-calculator/" target="_blank" rel="nofollow" style="color:#36b;font-size:10px;margin:0 5px 0 0;padding:0;text-decoration:none;">Mortgage Calculators</a></span></td><td style="margin:0;padding:0;"><span id="widgetFooterLink"><a href="https://www.zillow.com/mortgage-rates/" target="_blank" rel="nofollow" style="color:#36b;font-size:10px;margin:0 5px 0 0;padding:0;text-decoration:none;">Purchase Loans</a></span></td></tr></tbody></table></div>
 
-      </div>
-  </div>
+            <div id="zillow-large-search-box-widget-container" class="col-md-4"
+                style="width:432px;overflow:hidden;background-color:#e7f1fd;color:#555; font: normal normal normal 13px verdana,arial,sans-serif;line-height:13px;margin:0 auto;padding:0;text-align:center;border:1px solid #adcfff;letter-spacing:0;text-transform:none;">
+                <h2
+                    style="color:#d61;text-align:left;font-size:20px;line-height:20px;font-weight:normal;float:left;width:200px;margin-left:10px;margin-top:5px;letter-spacing:0;text-transform:none;">
+                    Find Homes</h2>
+                <div style="float:right;"><a href="https://www.zillow.com/" target="_blank" rel="nofollow">
+                        <img alt="Zillow Real Estate Information" style="border:0;"
+                            src="https://www.zillow.com/widgets/GetVersionedResource.htm?path=%2Fstatic%2Fimages%2Fpowered-by-zillow.gif"></img></a>
+                </div>
+                <iframe scrolling="no"
+                    src="https://www.zillow.com/widgets/search/LargeSearchBoxWidget.htm?did=zillow-large-search-box-iframe-widget&type=iframe&rgname=Berkeley+CA&shvi=yes"
+                    width="430" frameborder="0" height="400"></iframe>
+                <table id="zillow-tnc-widget-footer-links" width="100%"
+                    style="font: normal normal normal 10px verdana,arial,sans-serif;text-align:left;line-height:12px;margin:10px 5px;padding:0;border-spacing:0;border-collapse:collapse;">
+                    <tbody style="margin:0;padding:0;">
+                        <tr style="margin:0;padding:0;">
+                            <td style="font-weight:bold;font-size:10px;color:#555;text-align:left;margin:0;padding:0;">
+                                QUICK LINKS:</td>
+                        </tr>
+                        <tr style="margin:0;padding:0;">
+                            <td style="margin:0;padding:0;"><span id="widgetFooterLink" class="regionBasedLink"><a
+                                        href="https://www.zillow.com/berkeley-ca/" target="_blank" rel="nofollow"
+                                        style="color:#36b;font-family:verdana,arial,sans-serif;font-size:10px;margin:0 5px 0 0;padding:0;text-decoration:none;"><span
+                                            class="region">Berkeley</span> Real Estate Listing</a></span></td>
+                            <td style="margin:0;padding:0;"><span id="widgetFooterLink"><a
+                                        href="https://www.zillow.com/mortgage-rates/" target="_blank" rel="nofollow"
+                                        style="color:#36b;font-family:verdana,arial,sans-serif;font-size:10px;margin:0 5px 0 0;padding:0;text-decoration:none;">Mortgage
+                                        Rates</a></span></td>
+                            <td style="margin:0;padding:0;"><span id="widgetFooterLink"><a
+                                        href="https://www.zillow.com/refinance/" target="_blank" rel="nofollow"
+                                        style="color:#36b;font-family:verdana,arial,sans-serif;font-size:10px;margin:0 5px 0 0;padding:0;text-decoration:none;">Refinancing</a></span>
+                            </td>
+                        </tr>
+                        <tr style="margin:0;padding:0;">
+                            <td style="margin:0;padding:0;"><span id="widgetFooterLink" class="regionBasedLink"><a
+                                        href="https://www.zillow.com/berkeley-ca/foreclosures/" target="_blank"
+                                        rel="nofollow"
+                                        style="color:#36b;font-size:10px;margin:0 5px 0 0;padding:0;text-decoration:none;"><span
+                                            class="region">Berkeley</span> Foreclosures</a></span></td>
+                            <td style="margin:0;padding:0;"><span id="widgetFooterLink"><a
+                                        href="https://www.zillow.com/mortgage-calculator/" target="_blank"
+                                        rel="nofollow"
+                                        style="color:#36b;font-size:10px;margin:0 5px 0 0;padding:0;text-decoration:none;">Mortgage
+                                        Calculators</a></span></td>
+                            <td style="margin:0;padding:0;"><span id="widgetFooterLink"><a
+                                        href="https://www.zillow.com/mortgage-rates/" target="_blank" rel="nofollow"
+                                        style="color:#36b;font-size:10px;margin:0 5px 0 0;padding:0;text-decoration:none;">Purchase
+                                        Loans</a></span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
 
-<script src="/static/assets/javascript/app.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key={{google_api_key}}&callback=initMap"></script>
-    
+        </div>
+
+        {{!-- Separating Zillow Widget --}}
+        {{!-- <div id="charts" class="clearfix col-md-6">
+            <div class="col-title">
+                <h2 class="title">Berkeley Home Value Information</h2>
+            </div>
+            <div class="col1">
+                <dl>
+                    <dd class="clearfix">
+                        <script type="text/javascript">
+                            var ZindexChart = (function () {
+                                function $(id) { return document.getElementById(id); } function nocurrent() { var ids = ['oneyr', 'fiveyr', 'tenyr']; for (var i = 0, elm; elm = $(ids[i]); i++) { if (elm.className == 'current') { elm.className = ''; } } } function getDuration(url) { var qs = url.split('?').pop(); var qarr = qs.split('&'); for (var i = 0, len = qarr.length; i < len; i++) { var q = qarr[i].split('='); if (q[0] == 'chartDuration') { return q[1]; } } } return { change: function (chartId, id, dur) { nocurrent(); $(id).className = 'current'; $(chartId).src = $(chartId).src.replace(getDuration($(chartId).src), dur); } };
+                            })();
+                        </script>
+                        <style type="text/css">
+                            #geoZindexChart {
+                                text-align: center;
+                                overflow: hidden;
+                            }
+
+                            #geoZindexChart * {
+                                font-family: verdana, arial, sans-serif;
+                                font-size: 8pt;
+                            }
+
+                            #geoZindexChart ul {
+                                list-style-type: none;
+                            }
+
+                            #geoZindexChart li a {
+                                width: 28px;
+                                height: 13px;
+                                float: left;
+                                display: inline;
+                                margin-right: 4px;
+                                cursor: pointer;
+                                text-decoration: none;
+                            }
+
+                            #geoZindexChart li a span {
+                                display: none;
+                            }
+
+                            #geoZindexChart ul,
+                            #geoZindexChart li {
+                                float: left;
+                            }
+
+                            #geoZindexChart ul {
+                                margin-top: 3px;
+                                margin-left: 10px;
+                                clear: both;
+                            }
+
+                            #zindexChartList li a {
+                                background: url(https://www.zillowstatic.com/static/images/icons/btnicons_tiled.png) no-repeat 0 -150px;
+                            }
+
+                            .chart-buttons #oneyr {
+                                background-position: 0 -150px;
+                            }
+
+                            .chart-buttons #oneyr:hover {
+                                background-position: -50px -150px;
+                            }
+
+                            .chart-buttons #oneyr.current {
+                                background-position: -100px -150px;
+                            }
+
+                            .chart-buttons #fiveyr {
+                                background-position: 0 -175px;
+                            }
+
+                            .chart-buttons #fiveyr:hover {
+                                background-position: -50px -175px;
+                            }
+
+                            .chart-buttons #fiveyr.current {
+                                background-position: -100px -175px;
+                            }
+
+                            .chart-buttons #tenyr {
+                                background-position: 0 -200px;
+                            }
+
+                            .chart-buttons #tenyr:hover {
+                                background-position: -50px -200px;
+                            }
+
+                            .chart-buttons #tenyr.current {
+                                background-position: -100px -200px;
+                            }
+
+                            #zindexChartLegend {
+                                width: 100%;
+                            }
+
+                            .zindex-legend li {
+                                float: left;
+                                display: inline;
+                                margin: 0 5px;
+                                padding-left: 15px;
+                                white-space: nowrap;
+                                background-repeat: no-repeat;
+                                background-position: center left;
+                            }
+
+                            .zindex-legend .circ1 {
+                                background-image: url(https://www.zillowstatic.com/static/images/circ1.png);
+                            }
+
+                            .zindex-legend .circ2 {
+                                background-image: url(https://www.zillowstatic.com/static/images/circ2.png);
+                            }
+
+                            .zindex-legend .circ3 {
+                                background-image: url(https://www.zillowstatic.com/static/images/circ3.png);
+                            }
+
+                            .zindex-legend .circ-orange {
+                                background-image: url(https://www.zillowstatic.com/static/images/circ-orange.png);
+                            }
+
+                            #geoTrends,
+                            #geoTrends #geoZindexChart ul {
+                                margin: 0;
+                                padding: 0;
+                            }
+
+                            #geoTrends #geoZindexChart ul {
+                                margin-top: 5px;
+                            }
+
+                            #geoTrends ul#zindexChartList {
+                                padding-left: 5px;
+                            }
+
+                            #geoTrends h2 {
+                                display: none;
+                            }
+
+                            #geoTrends .chart-wrap {
+                                overflow: hidden;
+                                clear: both;
+                                float: left;
+                                display: block;
+                            }
+
+                            #geoTrends.geo-small .chart-wrap {
+                                width: 144px;
+                                height: 140px;
+                            }
+
+                            #geoTrends.geo-large .chart-wrap {
+                                width: 286px;
+                                height: 165px;
+                            }
+
+                            #geoTrends img {
+                                margin: -5px 0 0 -5px;
+                            }
+
+                            #geoTrends.geo-small .zindex-legend .circ1 {
+                                clear: left;
+                            }
+                        </style>
+                        <div id="geoZindexChart" class="line-chart">
+                            <h2>Value trends in Berkeley, CA</h2>
+                            <ul id="zindexChartList" class="chart-buttons">
+                                <li class="oneyr"><a id="oneyr"
+                                        onclick="ZindexChart.change('geoZindexChartImage', 'oneyr', '1year')">&nbsp;<span>1
+                                            yr</span></a></li>
+                                <li class="fiveyr"><a id="fiveyr"
+                                        onclick="ZindexChart.change('geoZindexChartImage', 'fiveyr', '5years')"
+                                        class="current">&nbsp;<span>5 yr</span></a></li>
+                                <li class="tenyr"><a id="tenyr"
+                                        onclick="ZindexChart.change('geoZindexChartImage', 'tenyr', '10years')">&nbsp;<span>10
+                                            yr</span></a></li>
+                            </ul>
+                            <ul id="zindexChartLegend" class="zindex-legend">
+                                <li class="circ-orange">Berkeley</li>
+                                <li class="circ1"> National </li>
+                            </ul><span class="chart-wrap"><img
+                                    src="/app?chartDuration=5years&amp;chartType=seo&amp;cityRegionId=16992&amp;component=%24widgets%24search%24LargeSearchBoxComponent.%24geo%24PartnerGeoZindexChart&amp;countyRegionId=1510&amp;lastRegionType=city&amp;nationRegionId=102001&amp;neighborhoodRegionId=0&amp;page=widgets%2Fsearch%2FLargeSearchBoxWidget&amp;service=chart&amp;showCity=true&amp;showCounty=false&amp;showHome=false&amp;showNation=true&amp;showNeighborhood=false&amp;showPercent=false&amp;showSales=false&amp;showState=false&amp;showZip=false&amp;stateRegionId=9&amp;zipRegionId=0"
+                                    alt="Home Values over Time" id="geoZindexChartImage"
+                                    title="Home Values over Time"></span>
+                        </div>
+                    </dd>
+                </dl>
+            </div>
+            <div class="col2">
+                <div id="chart1" class="clearfix">
+                    <dl>
+                        <dt class="title">Avg. Single-Family Home Value</dt>
+                        <dd><img src="/app?chartType=affordability_avgHomeValue&amp;graphType=barChart&amp;regionId=16992&amp;regionType=6&amp;service=chart"
+                                alt="Average house prices for Berkeley" title="Average house prices for Berkeley"></dd>
+                    </dl>
+                </div>
+                <div id="chart2" class="clearfix gap-top">
+                    <dl>
+                        <dt class="title">Average Condo Value</dt>
+                        <dd><img src="/app?chartType=affordability_avgCondoValue&amp;graphType=barChart&amp;regionId=16992&amp;regionType=6&amp;service=chart"
+                                alt="Average condominium prices for Berkeley"
+                                title="Average condominium prices for Berkeley"></dd>
+                    </dl>
+                    <p class="carrot"><a href="https://www.zillow.com/berkeley-ca/home-values/" target="_blank"
+                            rel="nofollow" scrnnm="">See more Berkeley home value information</a></p>
+                </div>
+            </div>
+        </div> --}}
+        
+
+    </div>
+
+    <script src="/static/assets/javascript/app.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key={{google_api_key}}&callback=initMap"></script>
+
 </body>
+
 </html>
-
-
-

@@ -3,7 +3,7 @@ const app = express();
 
 const PORT = process.env.PORT || 3000;
 
-const controller = require("./controller");
+const controller = require("./controller/flip_controller");
 const exphbs = require("express-handlebars");
 
 app.use(express.urlencoded({ extended: true }));
@@ -17,6 +17,6 @@ app.use(controller);
 
 
 app.listen(PORT, function() {
-    console.log("App now listening at localhost:" + PORT);
+    console.log("App now listening at http://localhost:" + PORT);
 });
   
