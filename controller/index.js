@@ -2,7 +2,7 @@ require(`dotenv`).config();
 
 const express = require(`express`);
 const router = express.Router();
-
+const api_routes = require(`./api_routes`);
 const keys = require(`../config/keys`);
 
 let city="Berkeley";
@@ -10,6 +10,8 @@ let state="CA";
 let zip="94703";
 let lat="";
 let lng=";"
+
+router.use(`/api`, api_routes);
 
 router.get(`/`, (req, res) => {
     res.render(`index`, {
@@ -25,13 +27,12 @@ router.post(`/`, (req, res) => {
     state = req.body.state;
     zip = req.body.zip;
 
-    // res.render(`index`, {
-    //     google_api_key: keys.google.api,
-    //     city,
-    //     state,
-    //     zip
-    // });
     res.json({city, state, zip});
+});
+
+router.get(`/login`, (req, res) => {
+    res.render(`login`);
+
 });
 
 module.exports = router;

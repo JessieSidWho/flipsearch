@@ -50,6 +50,17 @@ var orm = {
       cb(result);
     });
   },
+  one: function(table, username, password, cb) {
+    const queryString = `SELECT * FROM ${table} `
+                      + `WHERE username="${username}" `
+                      + `AND password="${password}"`
+    connection.query( queryString,
+      // [ { table }, { username }, { password } ],
+      (err, result) => {
+        if (err) throw err;
+        cb(result);
+      });
+  },
   create: function(table, cols, vals, cb) {
     var queryString = "INSERT INTO " + table;
 
@@ -80,6 +91,19 @@ var orm = {
     queryString += condition;
 
     console.log(queryString);
+    connection.query(queryString, function(err, result) {
+      if (err) {
+        throw err;
+      }
+
+      cb(result);
+    });
+  },
+  delete: function(table, condition, cb) {
+    var queryString = "DELETE FROM " + table;
+    queryString += " WHERE ";
+    queryString += condition;
+
     connection.query(queryString, function(err, result) {
       if (err) {
         throw err;
