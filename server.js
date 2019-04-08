@@ -3,7 +3,7 @@ const app = express();
 
 const PORT = process.env.PORT || 3000;
 
-const controller = require("./controller/flip_controller");
+const controller = require("./controller");
 const exphbs = require("express-handlebars");
 
 app.use(express.urlencoded({ extended: true }));
