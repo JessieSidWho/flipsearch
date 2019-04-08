@@ -51,9 +51,11 @@ var orm = {
     });
   },
   one: function(table, username, password, cb) {
-    const queryString = "SELECT * FROM ? WHERE ? AND ?"
+    const queryString = `SELECT * FROM ${table} `
+                      + `WHERE username="${username}" `
+                      + `AND password="${password}"`
     connection.query( queryString,
-      [ { table }, { username }, { password } ],
+      // [ { table }, { username }, { password } ],
       (err, result) => {
         if (err) throw err;
         cb(result);
