@@ -6,8 +6,6 @@ function initMap() {
     center: { lat: 37.871, lng: -122.272747 },
     zoom: 12
 
-
-    
   });
 
   const geocoder = new google.maps.Geocoder;
@@ -39,6 +37,19 @@ function geocodeLatLng(geocoder, input) {
         const zip = stateNzip[1];
 
         console.log(city, state, zip);
+
+        $.ajax({
+          url: "/",
+          method: "POST",
+          contentType: "application/json",
+          data: JSON.stringify({
+            city,
+            state,
+            zip
+          })
+        }).then(result => {
+          window.location.href = "/";
+        }); 
 
       } else {
         window.alert('No results found');
