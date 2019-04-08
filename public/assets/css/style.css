@@ -1,7 +1,7 @@
 /* Always set the map height explicitly to define the size of the div
  * element that contains the map. */
 #map {
-    height: 525px;
+    height: 625px;
     width: 800px;
 }
 
@@ -12,4 +12,39 @@ body {
     margin-left: 1em;
     margin-top: 2.5em;
     padding: 0;
+    /* background-color: #5D4674; */
+}
+
+#overlay {
+    width: 100%;
+    height: 110px;
+    z-index: 2;
+    position: absolute;
+    background-color: #e7f1fd;
+}
+
+#title {
+    padding-top: 30px;
+}
+
+#widget-container {
+    width:432px;
+    overflow:hidden;
+    background-color:#e7f1fd;
+    color:#555;
+    font: normal normal normal 13px verdana, arial, sans-serif;
+    line-height:13px;
+    margin:0 auto;
+    padding:0;
+    text-align:center;
+    border:1px solid #adcfff;
+    letter-spacing:0;
+    text-transform:none;
+}
+
+#loading {
+    display: flex;
+    justify-content: center;
+    /* height: 100%; */
+    /* width: 100%; */
 }

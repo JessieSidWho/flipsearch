@@ -5,9 +5,6 @@ const orm = require(`../../config/orm`);
 const flipModel = require("../../model/flip");
 
 router.post('/login', (req, res) => {
-    // console.log("hitting api login ");
-
-    // console.log(req.body);
 
     const table = "users";
     const username = req.body.username;
