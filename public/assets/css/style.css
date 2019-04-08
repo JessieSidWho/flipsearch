@@ -12,6 +12,7 @@ body {
     margin-left: 1em;
     margin-top: 2.5em;
     padding: 0;
+    /* background-color: #5D4674; */
 }
 
 #overlay {
@@ -39,4 +40,11 @@ body {
     border:1px solid #adcfff;
     letter-spacing:0;
     text-transform:none;
+}
+
+#loading {
+    display: flex;
+    justify-content: center;
+    /* height: 100%; */
+    /* width: 100%; */
 }
