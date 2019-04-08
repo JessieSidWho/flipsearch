@@ -1,4 +1,6 @@
-$(`#login`).on(`click`, event => {
+$(`#loading`).hide();
+
+$(`#submit`).on(`click`, event => {
     event.preventDefault();
 
     const username = $("#username").val().trim();
@@ -12,6 +14,12 @@ $(`#login`).on(`click`, event => {
         contentType: 'application/json',
         data: JSON.stringify({username, password})
     }).then(res => {
-        console.log(res);
+        // console.log(res);
+        $(`#login`).hide();
+        $(`#loading`).show();
+        
+        setTimeout( function() {
+            window.location.href="/";
+        }, 3000);
     });
 });
