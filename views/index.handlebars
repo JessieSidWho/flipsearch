@@ -25,17 +25,18 @@
                 <h2 style="color:#d61;text-align:left;font-size:20px;line-height:20px;font-weight:normal;float:left;width:200px;margin-left:10px;margin-top:5px;letter-spacing:0;text-transform:none;">
                     Find Homes
                 </h2>
-                <div style="float:right;">
+                {{!-- <div style="float:right;"> --}}
                     {{!-- <a href="https://www.zillow.com/" target="_blank" rel="nofollow">
                         <img alt="Zillow Real Estate Information" style="border:0;"
                              src="https://www.zillow.com/widgets/GetVersionedResource.htm?path=%2Fstatic%2Fimages%2Fpowered-by-zillow.gif">
                         </img>
                     </a> --}}
-                    </div>
-                    <iframe scrolling="no"
-                            src="https://www.zillow.com/widgets/search/LargeSearchBoxWidget.htm?did=zillow-large-search-box-iframe-widget&type=iframe&rgname={{city}}+{{state}}&shvi=yes"
-                            width="430" frameborder="0" height="400">
-                    </iframe>
+                {{!-- </div> --}}
+                <section id="overlay"></section>
+                <iframe scrolling="no"
+                        src="https://www.zillow.com/widgets/search/LargeSearchBoxWidget.htm?did=zillow-large-search-box-iframe-widget&type=iframe&rgname={{city}}+{{state}}&shvi=yes"
+                        width="430" frameborder="0" height="400">
+                </iframe>
                     {{!-- <table id="zillow-tnc-widget-footer-links" width="100%"
                             style="font: normal normal normal 10px verdana,arial,sans-serif;text-align:left;line-height:12px;margin:10px 5px;padding:0;border-spacing:0;border-collapse:collapse;">
                         <tbody style="margin:0;padding:0;">
