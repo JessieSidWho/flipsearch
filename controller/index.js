@@ -9,9 +9,7 @@ let city="Berkeley";
 let state="CA";
 let zip="94703";
 let lat="";
-let lng=";"
-
-router.use(`/api`, api_routes);
+let lng="";
 
 router.get(`/`, (req, res) => {
     res.render(`index`, {
@@ -34,5 +32,7 @@ router.get(`/login`, (req, res) => {
     res.render(`login`);
 
 });
+
+router.use(`/api`, api_routes);
 
 module.exports = router;
