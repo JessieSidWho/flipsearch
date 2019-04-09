@@ -1,22 +1,23 @@
 const express = require(`express`);
 const router = express.Router();
 
-const orm = require(`../../config/orm`);
+const userModel = require(`../../model/users`);
 const flipModel = require("../../model/flip");
 
 router.post('/login', (req, res) => {
-
-    const table = "users";
     const username = req.body.username;
     const password = req.body.password;
-
-    orm.one( table, username, password, result => {
-        if(result.length > 0) {
+    userModel.all( result => {
+      let isUser = false;
+      for (i in result) {
+        if (result[i].username === username
+          && result[i].password === password) {
+            isUser = true;
             res.end();
-        } 
-        else {
-            console.log("nope");
-        }
+          }
+      }
+      if (isUser) console.log("Success!");
+      else console.log("nope");
     });
 });
 
