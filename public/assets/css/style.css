@@ -12,15 +12,15 @@ body {
     margin-left: 1em;
     margin-top: 2.5em;
     padding: 0;
-    /* background-color: #5D4674; */
+    background-color: #e7f1fd !important;
 }
 
 #overlay {
     width: 100%;
-    height: 110px;
+    height: 120px;
     z-index: 2;
     position: absolute;
-    background-color: #e7f1fd;
+    background-color: white;
 }
 
 #title {
@@ -30,7 +30,7 @@ body {
 #widget-container {
     width:432px;
     overflow:hidden;
-    background-color:#e7f1fd;
+    background-color:white;
     color:#555;
     font: normal normal normal 13px verdana, arial, sans-serif;
     line-height:13px;
