@@ -4,7 +4,7 @@ function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
 
     center: { lat: 37.871, lng: -122.272747 },
-    zoom: 12
+    zoom: 12,
 
   });
 
@@ -21,6 +21,46 @@ function initMap() {
   });
 
   map.data.loadGeoJson('https://gist.githubusercontent.com/JessieSidWho/390d018648b7c4a7cbe88deb813db0a7/raw/45879ff7bf33b9364e0cb8bfe3cddea7e53091e5/sfbay.geojson');
+
+  
+
+  // Color each letter gray. Change the color when the isColorful property
+  // is set to true.
+  map.data.setStyle(function(feature) {
+    var color = 'white';
+    // if (feature.getProperty('isColorful')) {
+    //   color = feature.getProperty('color');
+    // }
+    return /** @type {!google.maps.Data.StyleOptions} */({
+      fillColor: color,
+      strokeColor: "grey",
+      strokeWeight: 1,
+      // strokeOpacity: 0.1
+    });
+  });
+
+  // When the user clicks, set 'isColorful', changing the color of the letters.
+  map.data.addListener('click', function(event) {
+    event.feature.setProperty('isColorful', true);
+  });
+
+  // When the user hovers, tempt them to click by outlining the letters.
+  // Call revertStyle() to remove all overrides. This will use the style rules
+  // defined in the function passed to setStyle()
+  map.data.addListener('mouseover', function(event) {
+    map.data.revertStyle();
+    map.data.overrideStyle(event.feature, {
+      strokeWeight: 4,
+      fillColor: "blue",
+      // strokeOpacity: 0.5
+    });
+  });
+
+  map.data.addListener('mouseout', function(event) {
+    map.data.revertStyle();
+  });
+
+  // map.data.setStyle({});
 }
 
 function geocodeLatLng(geocoder, input) {
