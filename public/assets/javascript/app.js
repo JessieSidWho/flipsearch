@@ -24,22 +24,18 @@ function initMap() {
 
   
 
-  let selected;
-  // Color each letter gray. Change the color when the isColorful property
-  // is set to true.
+  let selected; // stores last selected area
+ 
   map.data.setStyle(function(feature) {
     var color = 'white';
-    // if (feature.getProperty('isColorful')) {
-    //   color = feature.getProperty('color');
-    // }
+
     return /** @type {!google.maps.Data.StyleOptions} */({
       fillColor: color,
-      strokeColor: "grey",
+      strokeColor: "darkblue",
       strokeWeight: 1,
     });
   });
 
-  // When the user clicks, set 'isColorful', changing the color of the letters.
   map.data.addListener('click', function(event) {
     map.data.revertStyle();
     event.feature.setProperty('isColorful', true);
@@ -49,9 +45,6 @@ function initMap() {
     selected = event.feature;
   });
 
-  // When the user hovers, tempt them to click by outlining the letters.
-  // Call revertStyle() to remove all overrides. This will use the style rules
-  // defined in the function passed to setStyle()
   map.data.addListener('mouseover', function(event) {
     map.data.revertStyle();
     map.data.overrideStyle(event.feature, {
@@ -73,13 +66,6 @@ function initMap() {
       });
     }
   });
-
-  // map.data.addListener('click', function(event) {
-  //   map.data.revertStyle();
-  //   map.data.overrideStyle(event.feature, {
-  //     fillColor: "green"
-  //   });
-  // });
 }
 
 function geocodeLatLng(geocoder, input) {
