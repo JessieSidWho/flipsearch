@@ -11,7 +11,7 @@ let zip="94703";
 let lat="";
 let lng="";
 
-router.get(`/`, (req, res) => {
+router.get(`/main`, (req, res) => {
     res.render(`index`, {
         google_api_key: keys.google.api,
         city,
@@ -20,7 +20,7 @@ router.get(`/`, (req, res) => {
     });
 })
 
-router.post(`/`, (req, res) => {
+router.post(`/main`, (req, res) => {
     city = req.body.city;
     state = req.body.state;
     zip = req.body.zip;
@@ -28,9 +28,8 @@ router.post(`/`, (req, res) => {
     res.json({city, state, zip});
 });
 
-router.get(`/login`, (req, res) => {
+router.get(`/`, (req, res) => {
     res.render(`login`);
-
 });
 
 router.get(`/form`, (req, res) => {

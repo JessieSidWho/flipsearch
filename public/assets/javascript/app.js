@@ -40,6 +40,7 @@ function initMap() {
     map.data.revertStyle();
     event.feature.setProperty('isColorful', true);
     map.data.overrideStyle(event.feature, {
+      strokeWeight: 4,
       fillColor: "green"
     });
     selected = event.feature;
@@ -82,7 +83,7 @@ function geocodeLatLng(geocoder, input) {
         const zip = stateNzip[1];
 
         $.ajax({
-          url: "/",
+          url: "/main",
           method: "POST",
           contentType: "application/json",
           data: JSON.stringify({
