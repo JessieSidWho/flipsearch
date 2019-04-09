@@ -33,6 +33,11 @@ router.get(`/login`, (req, res) => {
 
 });
 
+router.get(`/form`, (req, res) => {
+    res.render(`form`);
+
+});
+
 router.use(`/api`, api_routes);
 
 module.exports = router;

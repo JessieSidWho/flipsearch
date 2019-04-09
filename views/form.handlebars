@@ -1,26 +1,94 @@
-<div class="container">
-    <div class="row">
-        <div class="col-md-6 offset-3">
-            <h1>For Employee Use Only!</h1>
+<div class="container-fluid jumbotron diplay-3 bg-secondary text-white text-center">
+    <h1>For Employee Use Only!</h1>
+</div>
+
+<div class="container-fluid">
+
+    <div class="row mb-5">
+        <div class="col-md-8 offset-2 border border-secondary rounded-lg">
 
             <form>
-                <label for="city">City<br>
-                  <input type="text" name="city" value="" required>
+              <div class="row border pt-2 pb-1">
+                <label class="col-md-12" for="zip">Zip Code<br>
+                  <input id="zip" class="col-md-11 mb-2 fieldClear" type="number" name="zip" placeholder="Zip Code" value="" required>
                 </label><br><br>
+              </div>
 
-                <label for="state">State<br>
-                  <input type="text" name="state" value="" required>
+              <div class="row border pt-2 pb-1">
+                <label class="col-md-12" for="city">City<br>
+                  <input id="city" class="col-md-11 mb-2 fieldClear" type="text" name="city" placeholder="City" value="" required>
                 </label><br><br>
+              </div>
 
-                <label for="zip">Zip Code<br>
-                  <input type="number" name="zip" value="" required>
+              <div class="row border pt-2 pb-1">
+                <label class="col-md-12" for="rproperties">Number of Residential Properties <br>
+                  <input id="rprop" class="col-md-11 mb-2 fieldClear" type="number" name="rproperties" placeholder="Resisdential Properties" value="" required>
                 </label><br><br>
+              </div>
 
-                <label for="flip"> <br>
-                  <input type="number" name="flip" value="" required>
+              <div class="row border pt-2 pb-1">
+                <label class="col-md-12" for="cproperties">Number of Commercial Properties<br>
+                  <input id="cprop" class="col-md-11 mb-2 fieldClear" type="number" name="cproperties" placeholder="Commercial Properties" value="" required>
                 </label><br><br>
+              </div>
+
+              <div class="row border pt-2 pb-1">
+                <label class="col-md-12" for="avgyearbuilt">Average Year Built<br>
+                  <input id="year" class="col-md-11 mb-2 fieldClear" type="number" name="avgyearbuilt" placeholder="Average Year Built" value="" required>
+                </label><br><br>
+              </div>
+
+              <div class="row border pt-2 pb-1">
+                <label class="col-md-12" for="avgsqft">Average Square Ft of Homes <br>
+                  <input id="sqft" class="col-md-11 mb-2 fieldClear" type="number" name="avgsqft" placeholder="Square Ft" value="" required>
+                </label><br><br>
+              </div>
+
+              <div class="row border pt-2 pb-1">
+                <label class="col-md-12" for="sales2019"># of Sales in 2019<br>
+                  <input id="sales19" class="col-md-11 mb-2 fieldClear" type="number" name="sales2019" placeholder="# of Sales in 2019" value="" required>
+                </label><br><br>
+              </div>
+
+              <div class="row border pt-2 pb-1">
+                <label class="col-md-12" for="flippercent2019">Pecentage of Flips on 2019<br>
+                  <input id="fp19" class="col-md-11 mb-2 fieldClear" type="number" name="flippercent2019" placeholder="% of Flips 2019" value="" required>
+                </label><br><br>
+              </div>
+
+              <div class="row border pt-2 pb-1">
+                <label class="col-md-12" for="flippedhomes2019"># of Homes Flipped 2019 <br>
+                  <input id="fh19" class="col-md-11 mb-2 fieldClear" type="number" name="flippedhomes2019" placeholder="# of Homes Flipped 2019" value="" required>
+                </label><br><br>
+              </div>
+
+              <div class="row border pt-2 pb-1">
+                <label class="col-md-12" for="sales2018"># of Sales in 2018<br>
+                  <input id="sales18" class="col-md-11 mb-2 fieldClear" type="number" name="sales2018" placeholder="# of Sales in 2018" value="" required>
+                </label><br><br>
+              </div>
+
+              <div class="row border pt-2 pb-1">
+                <label class="col-md-12" for="flippercent2018">Pecentage of Flips on 2018<br>
+                  <input id="fp18" class="col-md-11 mb-2 fieldClear" type="number" name="flippercent2018" placeholder="% of Flips 2018" value="" required>
+                </label><br><br>
+              </div>
+
+              <div class="row border-bottom-0 pt-2 pb-1">
+                <label class="col-md-12" for="flippedhomes2018"># of Homes Flipped 2018 <br>
+                  <input id="fh18" class="col-md-11 mb-2 fieldClear" type="number" name="flippedhomes2018" placeholder="# of Homes Flipped 2018" value="" required>
+                </label><br><br>
+              </div>
+
+              <div class="row pt-3 pb-3">
+                <button id="formSubmit" class="col-md-10 offset-1 mb-2 btn btn-block btn-primary" type="submit">SUBMIT</button>
+              </div>
+
             </form>
 
         </div>
     </div>
 </div>
+
+<script src="/static/assets/javascript/form.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>

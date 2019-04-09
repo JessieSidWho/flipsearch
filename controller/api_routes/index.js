@@ -23,29 +23,30 @@ router.post('/login', (req, res) => {
 
 
 // Routes
-router.get("/form", function(req, res) {
-  flipModel.all(function(data) {
-    let hbsObject = {
-      CityDataByZip: data
-    };
-    console.log(hbsObject)
-    res.render("form", hbsObject);
-  });
-});
+// router.get("/form", function(req, res) {
+//   flipModel.all(function(data) {
+//     let hbsObject = {
+//       CityDataByZip: data
+//     };
+//     // console.log(hbsObject)
+//     res.render("form", hbsObject);
+//   });
+// });
 
-router.get("/", function(req, res){
+router.get("/form", function(req, res){
   flipModel.all(function(data) {
     res.json(data);
   });
 });
 
 router.post("/form", function(req, res) {
-  console.log(req.body);
+  // console.log(req.body);
   flipModel.create([
-    "city", "state", "zip", "flip"
+    "zip", "city", "rproperties", "cproperties", "avgyearbuilt", "avgsqft", "sales2019", "flippercent2019", "flippedhomes2019", "sales2018", "flippercent2018", "flippedhomes2018"
   ], [
-    req.body.city, req.body.state, req.body.zip, req.body.flip
+    req.body.zip, req.body.city, req.body.rproperties, req.body.cproperties, req.body.avgyearbuilt, req.body.avgsqft, req.body.sales2019, req.body.flippercent2019, req.body.flippedhomes2019, req.body.sales2019, req.body.flippercent2019, req.body.flippedhomes2019 
   ], function(result) {
+    console.log(result);
     res.json({id: result.insertId});
   });
 });
