@@ -5,8 +5,18 @@ function initMap() {
 
     center: { lat: 37.871, lng: -122.272747 },
     zoom: 12,
+    
+    disableDefaultUI: true,
 
+    zoomControl: true,
+    scaleControl: true,
+    streetViewControl: false,
+    rotateControl: false,
+    fullscreenControl: false,
+    mapTypeControl: false,
   });
+
+  map.setMapTypeId('terrain');
 
   const geocoder = new google.maps.Geocoder;
 
@@ -21,8 +31,6 @@ function initMap() {
   });
 
   map.data.loadGeoJson('https://gist.githubusercontent.com/JessieSidWho/390d018648b7c4a7cbe88deb813db0a7/raw/45879ff7bf33b9364e0cb8bfe3cddea7e53091e5/sfbay.geojson');
-
-  
 
   let selected; // stores last selected area
  
