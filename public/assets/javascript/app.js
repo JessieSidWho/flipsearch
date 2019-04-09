@@ -24,6 +24,7 @@ function initMap() {
 
   
 
+  let selected;
   // Color each letter gray. Change the color when the isColorful property
   // is set to true.
   map.data.setStyle(function(feature) {
@@ -35,13 +36,17 @@ function initMap() {
       fillColor: color,
       strokeColor: "grey",
       strokeWeight: 1,
-      // strokeOpacity: 0.1
     });
   });
 
   // When the user clicks, set 'isColorful', changing the color of the letters.
   map.data.addListener('click', function(event) {
+    map.data.revertStyle();
     event.feature.setProperty('isColorful', true);
+    map.data.overrideStyle(event.feature, {
+      fillColor: "green"
+    });
+    selected = event.feature;
   });
 
   // When the user hovers, tempt them to click by outlining the letters.
@@ -51,16 +56,30 @@ function initMap() {
     map.data.revertStyle();
     map.data.overrideStyle(event.feature, {
       strokeWeight: 4,
-      fillColor: "blue",
-      // strokeOpacity: 0.5
+      fillColor: "blue"
     });
+    if (selected) {
+      map.data.overrideStyle(selected, {
+        fillColor: "green"
+      });
+    }
   });
 
   map.data.addListener('mouseout', function(event) {
     map.data.revertStyle();
+    if (selected) {
+      map.data.overrideStyle(selected, {
+        fillColor: "green"
+      });
+    }
   });
 
-  // map.data.setStyle({});
+  // map.data.addListener('click', function(event) {
+  //   map.data.revertStyle();
+  //   map.data.overrideStyle(event.feature, {
+  //     fillColor: "green"
+  //   });
+  // });
 }
 
 function geocodeLatLng(geocoder, input) {
