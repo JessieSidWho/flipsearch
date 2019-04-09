@@ -1,25 +1,39 @@
-<section id="login">
-    <section>
-        <h1>Flip Search</h1>
-    </section>
+<div class="container-fluid">
+    <div class="row mt-5" >
+        <section id="login" class="col-md-6 offset-3 border border-primary rounded-lg" style="background-color: white;">
 
-    <section>
-        <label>user name </label>
-        <input type="text" id="username">
-    </section>
+            <div class="row">
+                <section class="col-md-12 mt-3">
+                    <h1 class="animated flip delay-1s text-center"><i
+                            class="fas fa-home animated flip delay-2s"></i>FlipSearch</h1>
+                </section>
+            </div>
 
-    <section>
-        <label>password </label>
-        <input type="text" id="password">
-    </section>
+            <section class="row pt-2 pb-1">
+                <label class="col-md-10 offset-1">Username:<br>
+                    <input type="text" class="col-md-11 mb-2" id="username" placeholder="username" required>
+                </label><br><br>
+            </section>
 
-    <section>
-        <button id="submit">Login</button>
-    </section>
-</section>
+            <section class="row pt-2 pb-1">
+                <label class="col-md-10 offset-1">Password:<br>
+                    <input type="text" class="col-md-11 mb-2" id="password" placeholder="password" required>
+                </label>
+            </section>
 
-<section id="loading">
-    <img src="https://media.giphy.com/media/kodQslB005JIc/giphy.gif">
-</section>
+            <section class="row pt-3 pb-3">
+                <button id="submit" class="col-md-4 offset-4 mb-2 btn btn-block btn-primary">Login</button>
+            </section>
+
+        </section>
+
+        <section id="loading">
+            <img src="https://media.giphy.com/media/kodQslB005JIc/giphy.gif">
+        </section>
+
+
+    </div>
+
+</div>
 
 <script src="/static/assets/javascript/login.js"></script>
