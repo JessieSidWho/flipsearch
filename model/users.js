@@ -9,12 +9,6 @@ const users = {
       cb(res);
     });
   },
-  // verifyUser: function(cb) {
-  //   orm.all(table, function(res) {
-  //     console.log(res);
-  //     cb(res);
-  //   });
-  // },
   // The variables cols and vals are arrays.
   create: function(cols, vals, cb) {
     orm.create(table, cols, vals, function(res) {
