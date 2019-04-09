@@ -21,18 +21,6 @@ router.post('/login', (req, res) => {
     });
 });
 
-
-// Routes
-// router.get("/form", function(req, res) {
-//   flipModel.all(function(data) {
-//     let hbsObject = {
-//       CityDataByZip: data
-//     };
-//     // console.log(hbsObject)
-//     res.render("form", hbsObject);
-//   });
-// });
-
 router.get("/form", function(req, res){
   flipModel.all(function(data) {
     res.json(data);
@@ -40,7 +28,6 @@ router.get("/form", function(req, res){
 });
 
 router.post("/form", function(req, res) {
-  // console.log(req.body);
   flipModel.create([
     "zip", "city", "rproperties", "cproperties", "avgyearbuilt", "avgsqft", "sales2019", "flippercent2019", "flippedhomes2019", "sales2018", "flippercent2018", "flippedhomes2018"
   ], [

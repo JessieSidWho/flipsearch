@@ -17,7 +17,7 @@ $(`#submit`).on(`click`, event => {
         $(`body`).attr("style", "background-color: #5D4674;")
         
         setTimeout( function() {
-            window.location.href="/";
+            window.location.href="/main";
         }, 3000);
     });
 });
