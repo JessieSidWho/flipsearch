@@ -14,17 +14,17 @@ CREATE TABLE users (
 
 CREATE TABLE fliptable (
     id INT NOT NULL AUTO_INCREMENT,
-    zip INT(5) NOT NULL,
+    zip INT(10) NOT NULL,
     city VARCHAR(30) NOT NULL,
     rproperties INT(10) NOT NULL,
     cproperties INT(10) NOT NULL,
-    avgyearbuilt INT(4) NOT NULL,
-    avgsqft INT(4) NOT NULL,
+    avgyearbuilt INT(10) NOT NULL,
+    avgsqft INT(10) NOT NULL,
     sales2019 INT(10) NOT NULL,
-    flippercent2019 INT(2) NOT NULL,
-    flippedhomes2019 INT(4) NOT NULL,
+    flippercent2019 INT(10) NOT NULL,
+    flippedhomes2019 INT(10) NOT NULL,
     sales2018 INT(10) NOT NULL,
-    flippercent2018 INT(2) NOT NULL,
-    flippedhomes2018 INT(4) NOT NULL,
+    flippercent2018 INT(10) NOT NULL,
+    flippedhomes2018 INT(10) NOT NULL,
     PRIMARY KEY (id)
 );
