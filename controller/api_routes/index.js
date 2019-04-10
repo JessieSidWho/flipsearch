@@ -38,20 +38,20 @@ router.post("/form", function(req, res) {
   });
 });
 
-router.put("/form/:id", function(req, res) {
-  var condition = "id = " + req.params.id;
-  console.log("Condition: ", condition);
+// router.put("/form/:id", function(req, res) {
+//   var condition = "id = " + req.params.id;
+//   console.log("Condition: ", condition);
 
-  flipModel.update({
+//   flipModel.update({
     
-  },condition, function(result) {
-    if (result.changedRows == 0) {
-      return res.status(404).end();
-    } else {
-      res.status(200).end();
-    }
-  });
-});
+//   },condition, function(result) {
+//     if (result.changedRows == 0) {
+//       return res.status(404).end();
+//     } else {
+//       res.status(200).end();
+//     }
+//   });
+// });
 
 router.delete("/form/:id", function(req, res) {
   var condition = "id = " + req.params.id;
@@ -62,6 +62,20 @@ router.delete("/form/:id", function(req, res) {
     } else {
       res.status(200).end();
     }
+  });
+});
+
+router.get("/form/:zip", function(req, res) {
+
+  var condition = "zip = " + req.params.zip;
+  console.log("Condition: ", condition);
+
+  flipModel.one(condition, function(data) {
+    var hbsObject = {
+      zips: data
+    };
+    console.log(hbsObject);
+    res.send(data);
   });
 });
 
