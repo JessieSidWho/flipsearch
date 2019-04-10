@@ -110,8 +110,16 @@ function geocodeLatLng(geocoder, input) {
         }).then(result => {
 
           const url = `https://www.zillow.com/widgets/search/LargeSearchBoxWidget.htm?did=zillow-large-search-box-iframe-widget&type=iframe&rgname=${result.city}+${result.state}&shvi=yes`
-
           $("#widget").attr("src", url);
+
+          const city = result.city.replace(/\s+/g, "_");
+
+          console.log(city);
+
+          $(".crime-stats").hide();
+          $(`#${city}`).show();
+
+          sessionStorage.setItem("city", city);
         }); 
 
       } else {
@@ -123,3 +131,7 @@ function geocodeLatLng(geocoder, input) {
   });
 }
 
+if (sessionStorage.getItem("city")) {
+  $(".crime-stats").hide();
+  $(`#${sessionStorage.getItem("city")}`).show();
+}
