@@ -14,6 +14,7 @@ app.set("view engine", "handlebars");
 
 app.use(`/static`, express.static("public"));
 app.use(controller);
+// app.use(express.static.path.join((__dirname + '/public/assets/images/')));
 
 
 app.listen(PORT, function() {
