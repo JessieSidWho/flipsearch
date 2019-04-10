@@ -108,6 +108,11 @@ function geocodeLatLng(geocoder, input) {
           const city = result.city.replace(/\s+/g, "_");
 
           console.log(city);
+
+          $(".crime-stats").hide();
+          $(`#${city}`).show();
+
+          sessionStorage.setItem("city", city);
         }); 
 
       } else {
@@ -119,3 +124,7 @@ function geocodeLatLng(geocoder, input) {
   });
 }
 
+if (sessionStorage.getItem("city")) {
+  $(".crime-stats").hide();
+  $(`#${sessionStorage.getItem("city")}`).show();
+}

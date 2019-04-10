@@ -15,6 +15,14 @@ body {
     background-color: #e7f1fd !important;
 }
 
+.crime-stats {
+    display: none;
+}
+
+#berkeley {
+    display: block;
+}
+
 #overlay {
     width: 100%;
     height: 120px;
@@ -49,3 +57,4 @@ body {
     height: 100%;
     width: 100%;
 }
+
