@@ -102,7 +102,6 @@ function geocodeLatLng(geocoder, input) {
         }).then(result => {
 
           const url = `https://www.zillow.com/widgets/search/LargeSearchBoxWidget.htm?did=zillow-large-search-box-iframe-widget&type=iframe&rgname=${result.city}+${result.state}&shvi=yes`
-
           $("#widget").attr("src", url);
 
           const city = result.city.replace(/\s+/g, "_");
