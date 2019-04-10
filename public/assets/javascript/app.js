@@ -90,6 +90,14 @@ function geocodeLatLng(geocoder, input) {
         const state = stateNzip[0];
         const zip = stateNzip[1];
 
+        // GET
+        $.ajax({
+          url: "/api/form/" + zip,
+          method: "GET",
+        }).then(function(response){
+          console.log(response);
+        })
+
         $.ajax({
           url: "/main",
           method: "POST",
