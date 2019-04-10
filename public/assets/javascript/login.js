@@ -14,7 +14,8 @@ $(`#submit`).on(`click`, event => {
     }).then(res => {
         $(`#login`).hide();
         $(`#loading`).show();
-        $(`body`).attr("style", "background-color: #5D4674;")
+        $(`body`).attr("style", "background-color: #5D4674 !important;")
+        $(`html`).attr("style", "background-color: #5D4674 !important;")
         
         setTimeout( function() {
             window.location.href="/main";
