@@ -6,6 +6,16 @@ $(`#submit`).on(`click`, event => {
     const username = $("#username").val().trim();
     const password = $("#password").val().trim();
 
+    if(username !== "catman" && password !== "test"){
+        $("#username").val("");
+        $("#password").val("");
+        Swal.fire({
+            type: 'error',
+            title: 'Oops...',
+            text: 'Invalid Username or Password!',
+         })
+    }
+
     $.ajax({
         url: '/api/login',
         method: 'POST',

@@ -16,8 +16,8 @@ router.post('/login', (req, res) => {
             res.end();
           }
       }
-      if (isUser) console.log("Success!");
-      else console.log("nope");
+          if (isUser === true) console.log("Success!");
+          else console.log("nope");
     });
 });
 
