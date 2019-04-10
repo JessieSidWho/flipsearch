@@ -23,8 +23,10 @@
         </div>
     </div>
     <br>
-    <div class="row">
-        <div class="col-md-6 ml-4">
+
+    <div class="row">  {{!-- New ROW Starting CRIME and CARDS --}}
+        <div class="col-md-7 ml-4"> {{!-- COLUMN Starting CRIME --}}
+
             <div class="crime-stats" id="san_francisco">
                 <div>
                     <h2>Crime in San Francisco, California</h2>
@@ -35,11 +37,9 @@
                 </div>
                 <img src="/static/assets/images/sanfranciscocrime.png" alt="image">
             </div>
-        </div>
-    </div>
+    
 
-     <div class="row">
-        <div class="col-md-6 ml-4">
+     
             <div class="crime-stats" id="alameda">
                 <div>
                     <h2>Crime in Alameda, California</h2>
@@ -50,11 +50,9 @@
                 </div>
                 <img src="/static/assets/images/alamedacrime.png" alt="image">
             </div>
-        </div>
-    </div>
+    
 
-     <div class="row">
-        <div class="col-md-6 ml-4">
+     
             <div class="crime-stats" id="albany">
                 <div>
                     <h2>Crime in Albany, California</h2>
@@ -65,11 +63,9 @@
                 </div>
                 <img src="/static/assets/images/albanycrime.png" alt="image">
             </div>
-        </div>
-    </div>
+    
 
-     <div class="row">
-        <div class="col-md-6 ml-4">
+     
             <div class="crime-stats" id="berkeley">
                 <div>
                     <h2>Crime in Berkeley, California</h2>
@@ -80,11 +76,9 @@
                 </div>
                 <img src="/static/assets/images/berkeleycrime.png" alt="image">
             </div>
-        </div>
-    </div>
+    
 
-     <div class="row">
-        <div class="col-md-6 ml-4">
+     
             <div class="crime-stats" id="el_cerrito">
                 <div>
                     <h2>Crime in El Cerrito, California</h2>
@@ -95,11 +89,9 @@
                 </div>
                 <img src="/static/assets/images/elcerritocrime.png" alt="image">
             </div>
-        </div>
-    </div>
+    
 
-     <div class="row">
-        <div class="col-md-6 ml-4">
+     
             <div class="crime-stats" id="emeryville">
                 <div>
                     <h2>Crime in Emeryville, California</h2>
@@ -110,11 +102,9 @@
                 </div>
                 <img src="/static/assets/images/emeryvillecrime.png" alt="image">
             </div>
-        </div>
-    </div>
+    
 
-     <div class="row">
-        <div class="col-md-6 ml-4">
+     
             <div class="crime-stats" id="kensington">
                 <div>
                     <h2>Crime in Kensington, California</h2>
@@ -125,11 +115,9 @@
                 </div>
                 <img src="/static/assets/images/kensingtoncrime.png" alt="image">
             </div>
-        </div>
-    </div>
+    
 
-     <div class="row">
-        <div class="col-md-6 ml-4">
+     
             <div class="crime-stats" id="oakland">
                 <div>
                     <h2>Crime in Oakland, California</h2>
@@ -140,11 +128,9 @@
                 </div>
                 <img src="/static/assets/images/oaklandcrime.png" alt="image">
             </div>
-        </div>
-    </div>
+    
 
-     <div class="row">
-        <div class="col-md-6 ml-4">
+     
             <div class="crime-stats" id="orinda">
                 <div>
                     <h2>Crime in Orinda, California</h2>
@@ -155,11 +141,9 @@
                 </div>
                 <img src="/static/assets/images/orindacrime.png" alt="image">
             </div>
-        </div>
-    </div>
+    
 
-     <div class="row">
-        <div class="col-md-6 ml-4">
+     
             <div class="crime-stats" id="richmond">
                 <div>
                     <h2>Crime in Richmond, California</h2>
@@ -170,11 +154,9 @@
                 </div>
                 <img src="/static/assets/images/richmondcrime.png" alt="image">
             </div>
-        </div>
-    </div>
+    
 
-     <div class="row">
-        <div class="col-md-6 ml-4">
+     
             <div class="crime-stats" id="san_pablo">
                 <div>
                     <h2>Crime in San Pablo, California</h2>
@@ -185,8 +167,85 @@
                 </div>
                 <img src="/static/assets/images/sanpablocrime.png" alt="image">
             </div>
-        </div>
-    </div>
+        </div> {{!-- End CRIME Column --}}
+
+
+        <div class="col-md-4"> {{!-- Start CARDS Column --}}
+
+            <div class="row border ml-1 mr-1 pl-2 pt-1 pb-1" style="background-color: white;">City:
+                <div id="infoCity" class="col-md-12">
+
+                </div>
+            </div>
+
+            <div class="row border ml-1 mr-1 pl-2 pt-1 pb-1" style="background-color: white;">Zip Code:
+                <div id="infoZip" class="col-md-12">
+
+                </div>
+            </div>
+
+            <div class="row border ml-1 mr-1 pl-2 pt-1 pb-1" style="background-color: white;">Number of Residential Properties:
+                <div id="infoRprop" class="col-md-12">
+
+                </div>
+            </div>
+
+            <div class="row border ml-1 mr-1 pl-2 pt-1 pb-1" style="background-color: white;">Number of Commerical Properties:
+                <div id="infoCprop" class="col-md-12">
+
+                </div>
+            </div>
+
+            <div class="row border ml-1 mr-1 pl-2 pt-1 pb-1" style="background-color: white;">Average Year Built:
+                <div id="infoYear" class="col-md-12">
+
+                </div>
+            </div>
+
+            <div class="row border ml-1 mr-1 pl-2 pt-1 pb-1" style="background-color: white;">Average SqFt of Homes: 
+                <div id="infoSqft" class="col-md-12">
+
+                </div>
+            </div>
+
+            <div class="row border ml-1 mr-1 pl-2 pt-1 pb-1" style="background-color: white;">Number of Homes Sold 2019 (by ZIP):
+                <div id="infoSales19" class="col-md-12">
+
+                </div>
+            </div>
+
+            <div class="row border ml-1 mr-1 pl-2 pt-1 pb-1" style="background-color: white;">Percentage of Homes Flipped in 2019
+                <div id="infoFp19" class="col-md-12">
+
+                </div>
+            </div>
+
+            <div class="row border ml-1 mr-1 pl-2 pt-1 pb-1" style="background-color: white;">Homes Flipped in 2019:
+                <div id="infoFh19" class="col-md-12">
+
+                </div>
+            </div>
+
+            <div class="row border ml-1 mr-1 pl-2 pt-1 pb-1" style="background-color: white;">Number of Homes Sold 2018 (by ZIP):
+                <div id="infoSales18" class="col-md-12">
+
+                </div>
+            </div>
+
+            <div class="row border ml-1 mr-1 pl-2 pt-1 pb-1" style="background-color: white;">Percentage of Homes Flipped in 2018
+                <div id="infoFp18" class="col-md-12">
+
+                </div>
+            </div>
+
+            <div class="row border ml-1 mr-1 pl-2 pt-1 pb-1" style="background-color: white;">Homes Flipped in 2018:
+                <div id="infoFh18" class="col-md-12">
+
+                </div>
+            </div>
+
+        </div>{{!-- End CARDS Column --}}
+    </div> {{!-- End CRIME and CARDS Row --}}
 
 
     <script src="/static/assets/javascript/app.js"></script>
