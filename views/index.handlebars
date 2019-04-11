@@ -1,3 +1,4 @@
+
 <nav class="mb-3">
         <p id="clickStat" class="ml-4 h3">Click on the map to search an area for stats . .</p>
 </nav>
@@ -6,9 +7,9 @@
 
     <div class="row">
 
-        <div id="map" class="col-md-6 ml-4 border border-secondary rounded-lg"></div>
+        <div id="map" class="col-md-6 ml-4 mb-5 border border-secondary rounded-lg"></div>
 
-        <div id="widget-container" class="col-md-4 border border-secondary rounded-lg">
+        <div id="widget-container" class="col-md-4 mb-4 border border-secondary rounded-lg">
             <section id="overlay">
                 <h1 class="animated flip delay-1s" id="title">
                     <i class="fas fa-home animated flip delay-2s"></i>
@@ -35,7 +36,7 @@
     <br>
 
     <div class="row">  {{!-- New ROW Starting CRIME and CARDS --}}
-        <div class="col-md-6 ml-4 mr-5 border border-secondary rounded-lg mb-5" style="background-color: #F8F5E1;"> {{!-- COLUMN Starting CRIME --}}
+        <div id="crime-div" class="col-md-6 ml-4 border border-secondary rounded-lg mb-5"> {{!-- COLUMN Starting CRIME --}}
 
             <div class="crime-stats pl-3 pt-4" id="san_francisco">
                 <div>
@@ -180,81 +181,83 @@
         </div> {{!-- End CRIME Column --}}
 
 
-        <div class="col-md-4 border border-secondary rounded-lg ml-5 mb-5" style="background-color: #F8F5E1;"> {{!-- Start CARDS Column --}}
+        <div id="info" class="col-md-4 border border-secondary rounded-lg mb-5"> {{!-- Start CARDS Column --}}
 
-            <div class="row ml-1 mr-1 pl-2 pt-3 pb-1 text-center" style="background-color: #F8F5E1;">
+
+            <div class="row ml-1 mr-1 pl-2 pt-3 pb-1 text-center">
                 <div id="flipStats" class="col-md-12 h2 mt-2">
                   <i class="fas fa-home animated flip delay-2s"></i>FlipStats
                 </div>
             </div>
             
-            <div class="row ml-1 mr-1 pl-2 pt-1 pb-1" style="background-color: #F8F5E1;">City:
+            <div class="row ml-1 mr-1 pl-2 pt-1 pb-1">City:
+
                 <div id="infoCity" class="col-md-12 ">
                   
                 </div>
             </div>
 
-            <div class="row ml-1 mr-1 pl-2 pt-1 pb-1" style="background-color: #F8F5E1;">Zip Code:
+            <div class="row ml-1 mr-1 pl-2 pt-1 pb-1">Zip Code:
                 <div id="infoZip" class="col-md-12 ">
                 
                 </div>
             </div>
 
-            <div class="row ml-1 mr-1 pl-2 pt-1 pb-1" style="background-color: #F8F5E1;">Number of Residential Properties:
+            <div class="row ml-1 mr-1 pl-2 pt-1 pb-1">Number of Residential Properties:
                 <div id="infoRprop" class="col-md-12 ">
             
                 </div>
             </div>
 
-            <div class="row ml-1 mr-1 pl-2 pt-1 pb-1" style="background-color: #F8F5E1;">Number of Commerical Properties:
+            <div class="row ml-1 mr-1 pl-2 pt-1 pb-1">Number of Commerical Properties:
                 <div id="infoCprop" class="col-md-12 ">
         
                 </div>
             </div>
 
-            <div class="row ml-1 mr-1 pl-2 pt-1 pb-1" style="background-color: #F8F5E1;">Average Year Built:
+            <div class="row ml-1 mr-1 pl-2 pt-1 pb-1">Average Year Built:
                 <div id="infoYear" class="col-md-12 ">
             
                 </div>
             </div>
 
-            <div class="row ml-1 mr-1 pl-2 pt-1 pb-1" style="background-color: #F8F5E1;">Average SqFt of Homes: 
+            <div class="row ml-1 mr-1 pl-2 pt-1 pb-1">Average SqFt of Homes: 
                 <div id="infoSqft" class="col-md-12 ">
             
                 </div>
             </div>
 
-            <div class="row ml-1 mr-1 pl-2 pt-1 pb-1" style="background-color: #F8F5E1;">Number of Homes Sold 2019 (by ZIP):
+            <div class="row ml-1 mr-1 pl-2 pt-1 pb-1">Number of Homes Sold 2019 (by ZIP):
                 <div id="infoSales19" class="col-md-12 ">
     
                 </div>
             </div>
 
-            <div class="row ml-1 mr-1 pl-2 pt-1 pb-1" style="background-color: #F8F5E1;">Percentage of Homes Flipped in 2019:
+            <div class="row ml-1 mr-1 pl-2 pt-1 pb-1">Percentage of Homes Flipped in 2019:
                 <div id="infoFp19" class="col-md-12 ">
     
                 </div>
             </div>
 
-            <div class="row ml-1 mr-1 pl-2 pt-1 pb-1" style="background-color: #F8F5E1;">Homes Flipped in 2019:
+            <div class="row ml-1 mr-1 pl-2 pt-1 pb-1">Homes Flipped in 2019:
                 <div id="infoFh19" class="col-md-12 ">
 
                 </div>
             </div>
 
-            <div class="row ml-1 mr-1 pl-2 pt-1 pb-1" style="background-color: #F8F5E1;">Number of Homes Sold 2018 (by ZIP):
+            <div class="row ml-1 mr-1 pl-2 pt-1 pb-1">Number of Homes Sold 2018 (by ZIP):
                 <div id="infoSales18" class="col-md-12 ">
         
                 </div>
             </div>
 
-            <div class="row ml-1 mr-1 pl-2 pt-1 pb-1" style="background-color: #F8F5E1;">Percentage of Homes Flipped in 2018:
+            <div class="row ml-1 mr-1 pl-2 pt-1 pb-1">Percentage of Homes Flipped in 2018:
                 <div id="infoFp18" class="col-md-12 ">
     
                 </div>
             </div>
 
-            <div class="row ml-1 mr-1 pl-2 pt-1 pb-1" style="background-color: #F8F5E1;">Homes Flipped in 2018:
+            <div class="row ml-1 mr-1 pl-2 pt-1 pb-1">Homes Flipped in 2018:
                 <div id="infoFh18" class="col-md-12 ">
 
                 </div>

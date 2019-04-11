@@ -2,7 +2,7 @@
  * element that contains the map. */
 #map {
     height: 950px;
-    width: 600px;
+    min-width: 590px;
 }
 
 /* Optional: Makes the sample page fill the window. */
@@ -72,9 +72,22 @@ nav {
     border: none;
 }
 
+
+#info div, #crime-div, #info {
+    background-color: #F8F5E1;
+}
+
+#info {
+    min-width: 432px;
+    margin: 0 auto;
+}
+
+#crime-div {
+    min-height: 700px;
+    min-width: 590px;
+}
+
 #clickStat {
-    
     font-family: sans-serif;
     font-weight: 700;
-
 }
