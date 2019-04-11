@@ -179,10 +179,10 @@ $(document).ready(function() {
     $("#infoYear").html(response[0].avgyearbuilt);
     $("#infoSqft").html(response[0].avgsqft);
     $("#infoSales19").html(response[0].sales2019);
-    $("#infoFp19").html(response[0].flippercent2019);
+    $("#infoFp19").html(response[0].flippercent2019 + "%");
     $("#infoFh19").html(response[0].flippedhomes2019);
     $("#infoSales18").html(response[0].sales2018);
-    $("#infoFp18").html(response[0].flippercent2018);
+    $("#infoFp18").html(response[0].flippercent2018 + "%");
     $("#infoFh18").html(response[0].flippedhomes2018);
     
   });
