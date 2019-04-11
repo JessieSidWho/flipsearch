@@ -15,6 +15,10 @@ body {
     background-color: #e7f1fd !important;
 }
 
+nav {
+    margin-bottom: 3%;
+}
+
 .crime-stats {
     display: none;
 }
