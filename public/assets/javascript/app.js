@@ -110,7 +110,8 @@ function geocodeLatLng(geocoder, input) {
           $("#infoFp18").html(response[0].flippercent2018 + "%");
           $("#infoFh18").html(response[0].flippedhomes2018);
           
-          
+          sessionStorage.setItem("zip", zip);
+
         })
 
         $.ajax({
@@ -150,3 +151,33 @@ if (sessionStorage.getItem("city")) {
   $(".crime-stats").hide();
   $(`#${sessionStorage.getItem("city")}`).show();
 }
+$(document).ready(function() {
+  let zip="94703";
+
+  if (sessionStorage.getItem("zip")) {
+    zip = sessionStorage.getItem("zip")
+  }
+
+  console.log(zip);
+
+  $.ajax({
+    url: "/api/form/" + zip,
+    method: "GET",
+  }).then(function(response){
+    console.log(response[0]);
+
+    $("#infoZip").html(response[0].zip);
+    $("#infoCity").html(response[0].city);
+    $("#infoRprop").html(response[0].rproperties);
+    $("#infoCprop").html(response[0].cproperties);
+    $("#infoYear").html(response[0].avgyearbuilt);
+    $("#infoSqft").html(response[0].avgsqft);
+    $("#infoSales19").html(response[0].sales2019);
+    $("#infoFp19").html(response[0].flippercent2019);
+    $("#infoFh19").html(response[0].flippedhomes2019);
+    $("#infoSales18").html(response[0].sales2018);
+    $("#infoFp18").html(response[0].flippercent2018);
+    $("#infoFh18").html(response[0].flippedhomes2018);
+    
+  });
+})
