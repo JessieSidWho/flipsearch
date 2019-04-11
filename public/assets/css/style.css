@@ -71,3 +71,9 @@ nav {
     padding: 0px;
     border: none;
 }
+
+#info {
+    background-color: #F8F5E1;
+    min-width: 432px;
+    margin: 0 auto;
+}
