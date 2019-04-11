@@ -112,7 +112,13 @@ function geocodeLatLng(geocoder, input) {
           
           sessionStorage.setItem("zip", zip);
 
-        })
+          $("#flipStats i").removeClass("delay-2s");
+          $("#flipStats i").toggleClass("animated flip");
+          setTimeout(function() {
+            $("#flipStats i").toggleClass("animated flip");
+          }, 10);
+          
+        });
 
         $.ajax({
           url: "/main",
