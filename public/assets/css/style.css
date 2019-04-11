@@ -67,10 +67,3 @@ body {
     padding: 0px;
     border: none;
 }
-
-#loading {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-}
-

@@ -29,7 +29,7 @@ router.post(`/main`, (req, res) => {
 });
 
 router.get(`/`, (req, res) => {
-    res.render(`login`);
+    res.render(`login`, {layout: "login"});
 });
 
 router.get(`/form`, (req, res) => {
