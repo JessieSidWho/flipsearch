@@ -72,6 +72,7 @@ nav {
     border: none;
 }
 
+
 #info div, #crime-div, #info {
     background-color: #F8F5E1;
 }
@@ -84,4 +85,9 @@ nav {
 #crime-div {
     min-height: 700px;
     min-width: 590px;
+}
+
+#clickStat {
+    font-family: sans-serif;
+    font-weight: 700;
 }
