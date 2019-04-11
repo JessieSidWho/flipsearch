@@ -1,7 +1,7 @@
 /* Always set the map height explicitly to define the size of the div
  * element that contains the map. */
 #map {
-    height: 1025px;
+    height: 950px;
     width: 600px;
 }
 
@@ -13,6 +13,10 @@ body {
     margin-top: 2.5em;
     padding: 0;
     background-color: #e7f1fd !important;
+}
+
+nav {
+    margin-bottom: 3%;
 }
 
 .crime-stats {
