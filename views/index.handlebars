@@ -16,12 +16,23 @@
                     FlipSearch
                 </h1>
             </section>
-            <iframe id="widget" scrolling="no"
-                src="https://www.zillow.com/widgets/search/LargeSearchBoxWidget.htm?did=zillow-large-search-box-iframe-widget&type=iframe&rgname={{city}}+{{state}}&shvi=yes"
-                width="430" frameborder="0" height="385">
-            </iframe>
+            <section>
+                <iframe id="widget" scrolling="no"
+                    src="https://www.zillow.com/widgets/search/LargeSearchBoxWidget.htm?did=zillow-large-search-box-iframe-widget&type=iframe&rgname={{city}}+{{state}}&shvi=yes"
+                    width="430" frameborder="0" height="385">
+                </iframe>
+            </section>
+            <section>
+                <section id="overlay-2"><h1>Home Flipping Rate</h1></section>
+                <iframe id="chloro-map" frameborder="0" marginheight="0" marginwidth="0" title="data visualization"
+                    allowtransparency="true" allowfullscreen="true" class="tableauViz"
+                    width="430" height="150"
+                    src="https://public.tableau.com/views/2017HomeFlipsbyZipHeatMap/Dashboard1?:embed=y&amp;:showVizHome=no&amp;:host_url=https%3A%2F%2Fpublic.tableau.com%2F&amp;:embed_code_version=3&amp;:tabs=no&amp;:toolbar=yes&amp;:animate_transition=yes&amp;:display_static_image=no&amp;:display_spinner=no&amp;:display_overlay=yes&amp;:display_count=yes&amp;:loadOrderID=0">
+                </iframe>
+            </section>
         </div>
     </div>
+     
     <br>
     <div class="row">
         <div class="col-md-6 ml-4">
@@ -191,3 +202,5 @@
 
     <script src="/static/assets/javascript/app.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key={{google_api_key}}&callback=initMap"></script>
+    <script src="https://public.tableau.com/javascripts/api/viz_v1.js"></script>
+
