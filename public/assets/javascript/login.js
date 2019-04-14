@@ -6,7 +6,7 @@ $(`#submit`).on(`click`, event => {
     const username = $("#username").val().trim();
     const password = $("#password").val().trim();
 
-    if(username !== "catman" && password !== "test"){
+    if(username !== "catman" || password !== "test"){
         $("#username").val("");
         $("#password").val("");
         Swal.fire({
