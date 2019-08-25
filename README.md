@@ -16,3 +16,15 @@ We decided to set up the application with a click-to-search feature, instead of 
 
 The data was collected from a variety of sources whose quality may vary, and is mostly there to demonstrate the click-to-search feature.
 
+## Technology
+
+ - Node JS
+ - Express
+ - MySQL
+ - Bootstrap
+ - Handlebars
+ - Google Maps API
+ - Geo JSON data
+ - Animate CSS
+ - Zillow Widget
+ - Public Tableau Heatmap
