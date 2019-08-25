@@ -27,4 +27,4 @@ The data was collected from a variety of sources whose quality may vary, and is 
  - Geo JSON data
  - Animate CSS
  - Zillow Widget
- - Public Tableau Heatmap
+ - Atom Data Solutions Heatmap
